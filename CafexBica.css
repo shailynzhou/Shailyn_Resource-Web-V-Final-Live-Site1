@@ -1,0 +1,461 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+.dashboard {
+ background: #faf6f1;
+padding: 18px 30px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+width: 100%;
+}
+
+.topbanner{
+margin: 0;
+width: 100%;
+height: 500px;
+overflow: hidden;
+border-radius: 12px;
+position: relative; /* for overlay */
+}
+.topbanner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  object-position: center 55%;
+}
+/* TEXT IN CENTER */
+.banner-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+/* TEXT STYLE */
+.banner-text h1 {
+  color:#475330;
+  font-size: 145px;
+  letter-spacing: 4px;
+  font-weight: 400;
+}
+.banner-text h1:hover{
+color: #897c6b ;
+}
+
+/* LEFT SIDE */
+.nav-left {
+text-decoration: none;
+  font-size: 25px;
+  color: #5A604E;
+  font-weight: 350;
+}
+.nav-left :hover{
+    color: #897c6b;
+
+}
+a {
+  text-decoration: none;
+  color: #5A604E;
+}
+
+.logo{
+font-family: "rafaella", sans-serif;
+font-size: 25px;
+letter-spacing: 1px;
+color: #5A604E;
+text-align: center;
+flex: 1;
+}
+
+/*overview and information*/
+.cafe-details{
+  width: 100%;
+  background: #faf6f1;
+  padding: 60px;
+}
+.overview-section{
+  max-width: 950px;
+  margin: 0 auto 50px auto;
+  text-align: center;
+}
+.overview-section h2{
+  font-size: 42px;
+  color: #897c6b;
+  margin-bottom: 18px;
+}
+.overview-section p{
+  font-size: 18px;
+  line-height: 1.8;
+  color: #5A604E;
+}
+.info-row{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 60px;
+  background: #c5cbbc;
+  width: 100%;              /* makes it wide but not edge-to-edge */
+  margin: 60px auto;      /* centers it + adds space top/bottom */
+  padding: 80px 60px;     /* makes it taller like more vertical space */
+  border-radius: 20px;    /* curved edges */
+}
+.info-card{
+  text-align: left;
+}
+.info-card h3{
+  font-size: 24px;
+  color: #5A604E;
+  margin-bottom: 12px;
+}
+.info-card p{
+  font-size: 14px;
+  line-height: 1.7;
+  color: #5A604E;
+}
+@media (max-width: 1100px){
+  .info-row{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 700px){
+  .cafe-details{
+    padding: 35px 24px;
+  }
+  .overview-section h2{
+    font-size: 34px;
+  }
+  .overview-section p{
+    font-size: 16px;
+  }
+  .info-row{
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+/* map image*/
+.map-section{
+  width: 90%;       
+  max-width: 1000px;  /* limits how big it can get */
+  margin: 0 auto 60px auto;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 3px solid #897c6b; /* sage green colour */
+}
+.map-section img{
+  width: 100%;
+  display: block;
+  border-radius: 20px;
+}
+@media (max-width: 700px){
+  .map-section{
+    width: 92%;
+    border-radius: 16px;
+  }
+
+  .map-section img{
+    border-radius: 16px;
+  }
+}
+
+/*seatings*/
+.seating-section{
+  padding: 40px 60px 60px;
+  background: #faf6f1;
+  padding: 20px 60px 60px;
+}
+.seating-title{
+  font-size: 42px;
+  color: #897c6b;
+  text-align: left;
+  margin-bottom: 16px;
+}
+.seating-description{
+  max-width: 850px;
+  font-size: 17px;
+  line-height: 1.8;
+  color: #5A604E;
+  text-align: left;
+  margin-bottom: 35px;
+}
+.seating-grid{
+display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  max-width: 1550px;
+  margin: 0 auto;
+  align-items: start;
+}
+.seating-card{
+background: white;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  width: 100%;
+}
+.seating-card:hover{
+  transform: translateY(-10px);
+}
+.seating-card img{
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: center; /* default */
+}
+.seating-card:first-child img{
+  object-position: center 100%;
+}
+.seating-card:nth-child(2) img{
+  object-position: center 70%;
+}
+.seating-card:nth-child(3) img{
+  object-position: center 90%;
+}
+.seating-card h3{
+  margin-top: 26px;
+  font-size: 30px;
+  color: #5A604E;
+  text-align: center;
+}
+.seating-card p{
+  padding: 10px 25px 30px;
+  font-size: 16px;
+  color: #5A604E;
+  line-height: 1.5;
+  text-align: center;
+}
+@media (max-width: 1000px){
+  .seating-grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px){
+  .seating-section{
+    padding: 25px 24px 40px;
+  }
+
+  .seating-title{
+    font-size: 34px;
+  }
+
+  .seating-description{
+    font-size: 15px;
+  }
+
+  .seating-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .seating-card img{
+    height: 260px;
+  }
+}
+
+/* FOOD + ATMOSPHERE */
+.food-atmosphere-section{
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 50px;
+  max-width: 1400px;
+  align-items: start;
+   margin: 40px auto 20px;
+  padding: 0 60px 30px;
+}
+/* LEFT SIDE */
+.food-title{
+  font-size: 42px;
+  color: #897c6b;
+  margin-bottom:24px;
+  text-align: left;
+}
+.food-card-layout{
+  border: 20px solid #897c6b;
+  background: #faf6f1;
+  padding: 26px;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 30px;
+}
+.food-image-box img{
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  margin-top: 17px;
+}
+.food-info-box h3{
+  font-size: 34px;
+  color: #5A604E;
+  margin-top: 18px;
+  line-height: 1.8;
+}
+.food-info-box p{
+  font-size: 16px;
+  line-height: 1.3;
+  color: #5A604E;
+  margin-bottom: 16px;
+}
+.food-info-box ul{
+  margin: 0 0 18px 22px;
+  padding: 0;
+  color: #5A604E;
+  line-height: 1.3;
+}
+
+
+/* RIGHT SIDE */
+.atmosphere-title{
+  font-size: 42px;
+  color: #897c6b;
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.atmosphere-item{
+  padding: 20px 0 24px;
+  border-bottom: 2px solid #897c6b;
+}
+
+.atmosphere-item h3{
+  font-size: 28px;
+  color: #5A604E;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.atmosphere-item p{
+  margin-bottom: 12px;
+  font-size: 16px;
+  line-height: 1.3;
+  color: #5A604E;
+}
+
+.atmosphere-item ul{
+  margin: 0 0 14px 22px;
+  padding: 0;
+  color: #5A604E;
+  line-height: 1.2;
+}
+
+.atmosphere-item li{
+  margin-bottom: 6px;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.atmosphere-item li::marker{
+  color: #5A604E;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1100px){
+  .food-atmosphere-section{
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin: 30px auto 60px;
+    padding: 0 40px 60px;
+  }
+
+  .food-card-layout{
+    grid-template-columns: 220px 1fr;
+  }
+}
+
+@media (max-width: 700px){
+  .food-atmosphere-section{
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin: 30px auto 50px;
+    padding: 0 24px 50px;
+  }
+
+  .food-title,
+  .atmosphere-title{
+    font-size: 34px;
+  }
+
+  .food-card-layout{
+    grid-template-columns: 1fr;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .food-image-box{
+    margin-top: 0;
+  }
+
+  .food-image-box img{
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+  }
+
+  .food-info-box h3{
+    font-size: 28px;
+  }
+
+  .food-info-box p,
+  .food-info-box li,
+  .atmosphere-item p,
+  .atmosphere-item li{
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .atmosphere-item h3{
+    font-size: 24px;
+  }
+}
+
+.personal-comment-block{
+margin: 40px 0 80px;  
+padding: 0;            
+max-width: none;       
+}
+.personal-comment-title{
+  font-size: 42px;
+  color: #897c6b;
+  margin-bottom: 16px;
+    max-width: 650px;   /* matches your content width better */
+
+}
+.personal-comment-text{
+  max-width: 900px;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #5A604E;
+}
+@media (max-width: 1100px){
+  .personal-comment-block{
+    margin: 0 auto 70px;
+    padding: 30px 40px;
+  }
+}
+
+@media (max-width: 700px){
+  .personal-comment-block{
+    margin: 0 auto 50px;
+    padding: 20px 24px;
+  }
+
+  .personal-comment-title{
+    font-size: 32px;
+  }
+
+  .personal-comment-text{
+    font-size: 15px;
+    line-height: 1.7;
+  }
+}

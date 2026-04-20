@@ -1,0 +1,269 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.dashboard {
+ background: #faf6f1;
+padding: 18px 30px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+width: 100%;
+}
+
+/* LEFT SIDE */
+.nav-left {
+text-decoration: none;
+  font-size: 25px;
+  color: #5A604E;
+  font-weight: 350;
+}
+.nav-left :hover{
+    color: #897c6b;
+
+}
+a {
+  text-decoration: none;
+  color: #5A604E;
+}
+
+.logo{
+font-family: "rafaella", sans-serif;
+font-size: 25px;
+letter-spacing: 1px;
+color: #5A604E;
+text-align: center;
+flex: 1;
+}
+
+.about-link{
+  text-decoration: none;
+  font-size: 25px;
+  color: #5A604E;
+  font-weight: 350;
+}
+
+.about-link:hover{
+  color: #897c6b;
+}
+
+
+/* BANNER */
+.topbanner{
+  width: 100%;
+  margin: 0;
+  border-radius: 0;
+  overflow: hidden;
+}
+.banner{
+  position: relative;
+  width: 100%;
+  height: clamp(250px, 35vw, 400px); /* shorter */
+  overflow: hidden;
+}
+
+.slides{
+  display: flex;
+  width: 600%;
+  height: 100%;
+  animation: slide 30s ease-in-out infinite;
+}
+.slides img{
+  width: 16.6666%;
+  height: 100%;
+  object-fit: cover;
+  flex-shrink: 0;
+  display: block;
+}
+@keyframes slide{
+  0%, 12%{
+    transform: translateX(0%);
+  }
+
+  16%, 28%{
+    transform: translateX(-16.6666%);
+  }
+
+  32%, 44%{
+    transform: translateX(-33.3333%);
+  }
+
+  48%, 60%{
+    transform: translateX(-50%);
+  }
+  64%, 76%{
+    transform: translateX(-66.6666%);
+  }
+
+  80%, 92%{
+    transform: translateX(-83.3333%);
+  }
+
+  100%{
+    transform: translateX(0%);
+  }
+}
+
+.maintitle{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  text-align: center;
+  font-size: 70px;
+  color: #faf6f1;
+  z-index: 2;
+  text-shadow: 2px 2px 12px rgba(0,0,0,0.25);
+}
+
+/* ARROWS */
+.banner-arrow{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 54px;
+  height: 54px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.6);
+  background: rgba(250,246,241,0.25);
+  color: #faf6f1;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 3;
+  transition: 0.2s ease;
+}
+
+.banner-arrow.left{
+  left: 20px;
+}
+
+.banner-arrow.right{
+  right: 20px;
+}
+
+.banner-arrow:hover{
+  background: rgba(250,246,241,0.45);
+  transform: translateY(-50%) scale(1.05);
+}
+@media (max-width: 768px){
+  .banner{
+    height: 420px;
+  }
+
+  .maintitle{
+    font-size: clamp(24px, 6vw, 40px);
+    width: 88%;
+  }
+
+  .banner-arrow{
+    width: 42px;
+    height: 42px;
+    font-size: 24px;
+  }
+
+  .banner-arrow.left{
+    left: 12px;
+  }
+  .banner-arrow.right{
+    right: 12px;
+  }
+}
+
+
+/* SECTION TITLE */
+.latest-header{
+  width: min(1200px, 92%);
+  margin: 105px auto 24px auto; /* gap between banner and information*/
+}
+
+.title{
+  font-size: clamp(28px, 3vw, 48px);
+  color: #5A604E;
+}
+
+.italic{
+  font-style: italic;
+  font-weight: 400;
+  margin-right: 6px;
+}
+
+/* CAFE section */
+.cafe-grid{
+  width: min(1200px, 92%);
+  margin: 0 auto 70px auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+@media (max-width: 900px){
+  .cafe-grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px){
+  .cafe-grid{
+    grid-template-columns: 1fr;
+  }
+}
+.cafe-card{
+  position: relative;
+  display: block;
+  text-decoration: none;
+  overflow: hidden;
+  border-radius: 18px;
+  background: white;
+}
+
+.cafe-card img{
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  display: block;
+}
+
+.cafe-name{
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+  right: 18px;
+  color: #faf6f1;
+  font-size: clamp(24px, 2.2vw, 38px);
+  line-height: 1;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.35);
+}
+
+/* SMALL SCREENS */
+@media (max-width: 700px){
+  .dashboard-inner{
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-left,
+  .nav-right,
+  .logo{
+    flex: unset;
+    text-align: center;
+  }
+
+  .banner{
+    aspect-ratio: 4 / 5;
+  }
+
+  .banner-arrow{
+    width: 44px;
+    height: 44px;
+    font-size: 24px;
+  }
+}
